@@ -15,4 +15,16 @@ function computerPlay() {
     return computerChoice;
 }
 
-console.log(computerPlay());
+function playerPlay() {
+    let playerChoice = prompt("Choose Rock, Paper, or Scissors!").toLowerCase();
+    switch(playerChoice) {
+        case "rock": 
+            return "rock";
+        case "paper":
+            return "paper";
+        case "scissors":
+            return "scissors";
+        default:
+            alert("Invalid choice. Type:  'Rock', 'Paper', or 'Scissors'!");
+    }
+}
