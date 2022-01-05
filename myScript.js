@@ -10,7 +10,7 @@ function computerPlay() {
     } else if (randomNumber === 2) {
         computerChoice = "Paper";
     } else {
-        computerChoice = "Scissor";
+        computerChoice = "Scissors";
     }
     return computerChoice;
 }
@@ -19,12 +19,40 @@ function playerPlay() {
     let playerChoice = prompt("Choose Rock, Paper, or Scissors!").toLowerCase();
     switch(playerChoice) {
         case "rock": 
-            return "rock";
+            return "Rock";
         case "paper":
-            return "paper";
+            return "Paper";
         case "scissors":
-            return "scissors";
+            return "Scissors";
         default:
             alert("Invalid choice. Type:  'Rock', 'Paper', or 'Scissors'!");
     }
 }
+
+function playRound(computerSelection, playerSelection) {
+    computerSelection = computerPlay();
+    console.log(computerSelection);
+    playerSelection = playerPlay();
+    let playerWins = false;
+    if (computerSelection === playerSelection) {
+        return "Draw";
+    } else if (playerSelection === "Rock" && computerSelection === "Scissors") {
+        playerWins = true;
+    } else if (playerSelection === "Paper" && computerSelection === "")
+    return playerWins;
+}
+
+function game(rounds) {
+    let playerScore = 0;
+    let computerScore = 0;
+    for (let i = 1; i <= rounds; i++) {
+        playerWins = playRound();
+        if (playerWins) {
+            playerScore++;
+        } else if (playerWins === "Draw") {
+
+        }
+    }
+}
+
+console.log(playRound());
